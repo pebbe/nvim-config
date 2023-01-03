@@ -1,5 +1,5 @@
 local colorscheme = "OceanicNext"
-if vim.opt.background:get() == 'light' then
+if vim.api.nvim_get_option_value('background', {}) == 'light' then
   colorscheme = 'OceanicNextLight'
 end
 
