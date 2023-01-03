@@ -10,6 +10,10 @@ end
 
 -- normal -------------------------------------------------------
 
+-- test
+k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d('Nederlands'))
+k('n', '<leader>xe', ':w<cr>:terminal aspell --lang=en check %<cr>:e! %<cr>', d('Engels'))
+
 -- movement
 k('n', 'j', 'gj', opts)
 k('n', 'k', 'gk', opts)
