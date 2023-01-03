@@ -4,8 +4,4 @@ if not status then
   return
 end
 
-lualine.setup({
-  options = {
-    theme = 'OceanicNext',
-  },
-})
+lualine.setup()
