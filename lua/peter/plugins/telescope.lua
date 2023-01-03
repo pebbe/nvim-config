@@ -1,6 +1,7 @@
 local telescope = require 'telescope'
 
 telescope.setup {
+  --[[
   extensions = {
     project = {
       base_dirs = {
@@ -8,6 +9,7 @@ telescope.setup {
       },
     },
   },
+  --]]
   defaults = {
     file_ignore_patterns = {
       "~$",
