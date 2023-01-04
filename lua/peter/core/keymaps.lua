@@ -13,6 +13,8 @@ end
 -- spelling
 k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d('Nederlands'))
 k('n', '<leader>xe', ':w<cr>:terminal aspell --lang=en check %<cr>:e! %<cr>', d('Engels'))
+k('n', '<leader>N', ':setlocal spell spelllang=nl<CR>', d('Nederlandse spelling'))
+k('n', '<leader>E', ':setlocal spell spelllang=en<CR>', d('Engelse spelling'))
 
 -- movement
 k('n', 'j', 'gj', opts)
@@ -66,6 +68,17 @@ k('n', '<leader>ff', b.find_files, d("find files"))
 k('n', '<leader>fg', b.live_grep, d("live grep"))
 k('n', '<leader>fb', b.buffers, d("buffers"))
 k('n', '<leader>fh', b.help_tags, d("help tags"))
+k('n', '<leader>fr', b.lsp_references, d("references"))
+k('n', '<leader>fd', b.lsp_definitions, d("definition"))
+k('n', '<leader>fci', b.lsp_incoming_calls, d("incoming calls"))
+k('n', '<leader>fco', b.lsp_outgoing_calls, d("outgoing call"))
+k('n', '<leader>fi', b.lsp_implementations, d("implementations"))
+k('n', '<leader>ft', b.lsp_type_definitions, d("type definition"))
+
+k('n', '<leader>gb', b.git_branches, d("branches"))
+k('n', '<leader>gc', b.git_commits, d("commits"))
+k('n', '<leader>gf', b.git_files, d("files"))
+k('n', '<leader>gs', b.git_status, d("status"))
 
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d("Neotree"))

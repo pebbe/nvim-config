@@ -116,6 +116,7 @@ return packer.startup(function(use)
 
   use("tpope/vim-dispatch")
 
+  -- use("vim-scripts/vimspell")
 
   -- end plugins
   --------
