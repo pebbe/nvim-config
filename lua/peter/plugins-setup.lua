@@ -65,6 +65,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   })
+  use('nvim-treesitter/playground')
 
   -- neo-tree
   -- Unless you are still migrating, remove the deprecated commands from v1.x
@@ -115,8 +116,6 @@ return packer.startup(function(use)
   use("folke/which-key.nvim")
 
   use("tpope/vim-dispatch")
-
-  -- use("vim-scripts/vimspell")
 
   -- end plugins
   --------
