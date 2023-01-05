@@ -79,6 +79,10 @@ k('n', '<leader>gb', b.git_branches, d("branches"))
 k('n', '<leader>gc', b.git_commits, d("commits"))
 k('n', '<leader>gf', b.git_files, d("files"))
 k('n', '<leader>gs', b.git_status, d("status"))
+k('n', '<leader>gn', ':Gitsigns next_hunk<CR>', d('next hunk'))
+k('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', d('previous hunk'))
+k('n', '<leader>gh', ':Gitsigns preview_hunk<CR>', d('view hunk'))
+k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d("Neotree"))

@@ -11,5 +11,6 @@ else
   require("peter.plugins.treesitter")
   require('peter.plugins.telescope')
   require('peter.plugins.comment')
+  require('peter.plugins.gitsigns')
   require('peter.plugins.whichkey')
 end
