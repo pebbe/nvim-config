@@ -66,7 +66,7 @@ for _, server in pairs(servers) do
 				},
 			},
 		})
-	elseif server == 'lemminx' then
+	elseif server == 'lemminx' or server == 'tsserver' then
 		local cap = require('cmp_nvim_lsp').default_capabilities()
 		cap.document_formatting = false
 		l[server].setup({

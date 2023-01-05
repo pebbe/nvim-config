@@ -14,4 +14,5 @@ else
 	require('peter.plugins.gitsigns')
 	require('peter.plugins.null-ls')
 	require('peter.plugins.whichkey')
+	require('peter.plugins.indent_blankline')
 end
