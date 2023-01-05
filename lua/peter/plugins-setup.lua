@@ -117,6 +117,9 @@ return packer.startup(function(use)
 
   use("tpope/vim-dispatch")
 
+  use('numToStr/Comment.nvim')
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
   -- end plugins
   --------
 

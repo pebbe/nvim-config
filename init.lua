@@ -10,5 +10,6 @@ else
   -- require("peter.plugins.cokeline")
   require("peter.plugins.treesitter")
   require('peter.plugins.telescope')
+  require('peter.plugins.comment')
   require('peter.plugins.whichkey')
 end
