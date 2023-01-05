@@ -21,17 +21,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(_, bufnr)
 	local k = vim.keymap
-	k.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
-	k.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
-	k.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = bufnr })
-	k.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr })
-	k.set('n', 'gr', '<CMD>Telescope lsp_references<CR>', { buffer = bufnr })
-	k.set('n', '<leader>a', vim.lsp.buf.code_action, { buffer = bufnr })
-	k.set('n', '<leader>F', vim.lsp.buf.format, { buffer = bufnr })
-	k.set('n', '<leader>r', vim.lsp.buf.rename, { buffer = bufnr })
-	k.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = bufnr })
-	k.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr })
-	k.set('n', '<leader>dl', '<CMD>Telescope diagnostics<CR>', { buffer = bufnr })
+	k.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, desc = 'Hover' })
+	k.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Definition' })
+	k.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = bufnr, desc = 'Type definition' })
+	k.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, desc = 'Implementation' })
+	k.set('n', 'gr', '<CMD>Telescope lsp_references<CR>', { buffer = bufnr, desc = 'References' })
+	k.set('n', '<leader>a', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'Code action' })
+	k.set('n', '<leader>F', vim.lsp.buf.format, { buffer = bufnr, desc = 'Format' })
+	k.set('n', '<leader>r', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename' })
+	k.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = bufnr, desc = 'Next issue' })
+	k.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr, desc = 'Previous issue' })
+	k.set('n', '<leader>dl', '<CMD>Telescope diagnostics<CR>', { buffer = bufnr, desc = 'Diagnostics' })
 end
 
 local l = require('lspconfig')
@@ -67,20 +67,11 @@ for _, server in pairs(servers) do
 			},
 		})
 	elseif server == 'lemminx' then
+		local cap = require('cmp_nvim_lsp').default_capabilities()
+		cap.document_formatting = false
 		l[server].setup({
-			capabilities = capabilities,
+			capabilities = cap,
 			on_attach = on_attach,
-			settings = {
-				xml = {
-					format = {
-						splitAttributes = false,
-						joinCDATALines = false,
-						joinContentLines = false,
-						joinCommentLines = false,
-						spaceBeforeEmptyCloseTag = false,
-					},
-				},
-			},
 		})
 	else
 		l[server].setup({
