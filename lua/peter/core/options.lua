@@ -19,7 +19,7 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
-opt.signcolumn = 'number' -- show sign column so that text doesn't shift
+opt.signcolumn = 'yes' -- 'number' -- show sign column so that text doesn't shift
 
 if vim.fn.environ()['TERM'] == 'xterm-256color' then
 	vim.opt.termguicolors = true

@@ -58,7 +58,6 @@ return packer.startup(function(use)
 		tag = '0.1.0',
 		-- or                            , branch = '0.1.x',
 	})
-	use('nvim-telescope/telescope-project.nvim')
 
 	-- treesitter
 	use({
@@ -76,7 +75,7 @@ return packer.startup(function(use)
 		branch = 'v2.x',
 		requires = {
 			'nvim-lua/plenary.nvim',
-			-- 'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
 			'MunifTanjim/nui.nvim',
 		},
 	})
@@ -87,7 +86,7 @@ return packer.startup(function(use)
 	-- cokeline
 	use({
 		'noib3/nvim-cokeline',
-		requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+		requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
 	})
 
 	-- LSP
@@ -122,7 +121,9 @@ return packer.startup(function(use)
 
 	use('lewis6991/gitsigns.nvim')
 
-	use('lukas-reineke/indent-blankline.nvim')
+	-- use('lukas-reineke/indent-blankline.nvim')
+
+	use({ 'echasnovski/mini.nvim', branch = 'stable' })
 
 	-- end plugins
 	--------

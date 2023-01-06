@@ -4,4 +4,13 @@ if not status then
 	return
 end
 
-cokeline.setup({})
+cokeline.setup({
+	sidebar = {
+		filetype = 'neo-tree',
+		components = {
+			{
+				text = ' neo-tree',
+			},
+		},
+	},
+})

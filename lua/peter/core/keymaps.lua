@@ -86,7 +86,10 @@ k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d('Neotree'))
-k('n', '<F8>', ':Neotree toggle show buffers right<CR>', d('Buffers'))
+
+k('n', '<leader>h', ':vertical help ', d('Help'))
+
+k('n', '<F4>', ':lua MiniSessions.select()<CR>', d('Sessies'))
 
 -- Visual --------------------------------------
 
