@@ -1,5 +1,5 @@
 if vim.g.vscode then
-	return
+  return
 end
 
 require('peter.plugins-setup')
@@ -18,3 +18,4 @@ require('peter.plugins.gitsigns')
 require('peter.plugins.null-ls')
 require('peter.plugins.whichkey')
 -- require('peter.plugins.indent_blankline')
+require('peter.plugins.chafa')

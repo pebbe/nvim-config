@@ -123,6 +123,15 @@ return packer.startup(function(use)
 
 	-- use('lukas-reineke/indent-blankline.nvim')
 
+  -- weergave van afbeeldingen
+	use({
+		'princejoogie/chafa.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'm00qek/baleia.nvim',
+		},
+	})
+
 	-- end plugins
 	--------
 
