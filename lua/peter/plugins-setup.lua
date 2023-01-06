@@ -123,8 +123,6 @@ return packer.startup(function(use)
 
 	-- use('lukas-reineke/indent-blankline.nvim')
 
-	use({ 'echasnovski/mini.nvim', branch = 'stable' })
-
 	-- end plugins
 	--------
 
