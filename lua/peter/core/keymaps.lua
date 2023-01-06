@@ -86,12 +86,15 @@ k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d('Neotree'))
+k('n', '<F8>', ':Neotree buffers right toggle<CR>', d('Show buffers'))
 
 k('n', '<F1>', ':vertical help<cr>', d('Help'))
 k('n', '<leader>h', ':vertical help ', d('Help'))
 
 local cd = require('peter.core.cd')
 k('n', '<F4>', cd.cd, d('Sessies'))
+
+k('n', '<F5>', ':ls!<CR>', d('List buffers'))
 
 -- Visual --------------------------------------
 
