@@ -31,7 +31,8 @@ local on_attach = function(_, bufnr)
 	k.set('n', '<leader>r', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename' })
 	k.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = bufnr, desc = 'Next issue' })
 	k.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = bufnr, desc = 'Previous issue' })
-	k.set('n', '<leader>dl', '<CMD>Telescope diagnostics<CR>', { buffer = bufnr, desc = 'Diagnostics' })
+	k.set('n', '<leader>dl', '<CMD>Telescope diagnostics<CR>', { buffer = bufnr, desc = 'All diagnostics' })
+  k.set('n', '<leader>dd', vim.diagnostic.open_float, { buffer = bufnr, desc = 'Diagnostics' } )
 end
 
 local l = require('lspconfig')

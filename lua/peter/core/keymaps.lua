@@ -84,9 +84,13 @@ k('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', d('previous hunk'))
 k('n', '<leader>gh', ':Gitsigns preview_hunk<CR>', d('view hunk'))
 k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 
+-- lsp 
+k('n', '<leader>do', ':lua vim.diagnostic.config({virtual_text=true })<CR>', d('messages open'))
+k('n', '<leader>dc', ':lua vim.diagnostic.config({virtual_text=false})<CR>', d('messages close'))
+
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d('Neotree'))
-k('n', '<F8>', ':Neotree buffers right toggle<CR>', d('Show buffers'))
+k('n', '<F8>', ':Telescope buffers<CR>', d('Show buffers'))
 
 k('n', '<F1>', ':vertical help<cr>', d('Help'))
 k('n', '<leader>h', ':vertical help ', d('Help'))

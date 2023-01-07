@@ -123,7 +123,7 @@ return packer.startup(function(use)
 
 	-- use('lukas-reineke/indent-blankline.nvim')
 
-  -- weergave van afbeeldingen
+	-- weergave van afbeeldingen
 	use({
 		'princejoogie/chafa.nvim',
 		requires = {
@@ -131,6 +131,8 @@ return packer.startup(function(use)
 			'm00qek/baleia.nvim',
 		},
 	})
+
+	use('akinsho/toggleterm.nvim')
 
 	-- end plugins
 	--------
