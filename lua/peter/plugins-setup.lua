@@ -1,13 +1,13 @@
 -- auto install packer if not installed
 local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
@@ -23,129 +23,130 @@ vim.cmd([[
 -- import packer safely
 local status, packer = pcall(require, 'packer')
 if not status then
-	return
+  return
 end
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require('packer.util').float({ border = 'rounded' })
-		end,
-	},
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'rounded' })
+    end,
+  },
 })
 
 -- add list of plugins to install
 return packer.startup(function(use)
-	-- packer can manage itself
-	use('wbthomason/packer.nvim')
+  -- packer can manage itself
+  use('wbthomason/packer.nvim')
 
-	--------
-	-- begin plugins
+  --------
+  -- begin plugins
 
-	use('nvim-lua/plenary.nvim') -- helper voor veel andere plugins
+  use('nvim-lua/plenary.nvim') -- helper voor veel andere plugins
 
-	-- themes
-	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-	use('lunarvim/darkplus.nvim')
-	use('lunarvim/onedarker.nvim')
-	use('folke/tokyonight.nvim')
-	use('rafi/awesome-vim-colorschemes')
-	use('bluz71/vim-nightfly-guicolors')
+  -- themes
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use('lunarvim/darkplus.nvim')
+  use('lunarvim/onedarker.nvim')
+  use('folke/tokyonight.nvim')
+  use('rafi/awesome-vim-colorschemes')
+  use('bluz71/vim-nightfly-guicolors')
 
-	-- telescope
-	use({
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
-	})
+  -- telescope
+  use({
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+  })
 
-	-- treesitter
-	use({
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate',
-	})
-	use('nvim-treesitter/playground')
+  -- treesitter
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  })
+  use('nvim-treesitter/playground')
 
-	-- neo-tree
-	-- Unless you are still migrating, remove the deprecated commands from v1.x
-	vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+  -- neo-tree
+  -- Unless you are still migrating, remove the deprecated commands from v1.x
+  vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-	use({
-		'nvim-neo-tree/neo-tree.nvim',
-		branch = 'v2.x',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-			'MunifTanjim/nui.nvim',
-		},
-	})
+  use({
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+  })
 
-	-- statusline
-	use('nvim-lualine/lualine.nvim')
+  -- statusline
+  use('nvim-lualine/lualine.nvim')
 
-	-- cokeline
-	use({
-		'noib3/nvim-cokeline',
-		requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
-	})
+  -- cokeline
+  use({
+    'noib3/nvim-cokeline',
+    requires = 'nvim-tree/nvim-web-devicons', -- If you want devicons
+  })
 
-	-- LSP
-	use({
-		'williamboman/mason.nvim',
-		'williamboman/mason-lspconfig.nvim',
-		'neovim/nvim-lspconfig',
-		'jose-elias-alvarez/null-ls.nvim', -- for formatters and linters
-	})
+  -- LSP
+  use({
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+    'jose-elias-alvarez/null-ls.nvim', -- for formatters and linters
+  })
 
-	-- Code completion
-	use({
-		'hrsh7th/nvim-cmp',
-		requires = { 'L3MON4D3/LuaSnip' },
-	})
-	use('hrsh7th/cmp-nvim-lsp')
-	use('hrsh7th/cmp-nvim-lua')
-	-- use('hrsh7th/cmp-buffer')
-	-- use('hrsh7th/cmp-path')
-	-- use "hrsh7th/cmp-cmdline" -- cmdline completions
-	-- use("saadparwaiz1/cmp_luasnip")
+  -- Code completion
+  use({
+    'hrsh7th/nvim-cmp',
+    requires = { 'L3MON4D3/LuaSnip' },
+  })
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lua')
+  -- use('hrsh7th/cmp-buffer')
+  -- use('hrsh7th/cmp-path')
+  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
+  -- use("saadparwaiz1/cmp_luasnip")
 
-	-- snippets
-	-- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- snippets
+  -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-	use('folke/which-key.nvim')
+  use('folke/which-key.nvim')
 
-	use('tpope/vim-dispatch')
+  use('tpope/vim-dispatch')
 
-	use('numToStr/Comment.nvim')
-	use('JoosepAlviste/nvim-ts-context-commentstring')
+  use('numToStr/Comment.nvim')
+  use('JoosepAlviste/nvim-ts-context-commentstring')
 
-	use('lewis6991/gitsigns.nvim')
+  use('lewis6991/gitsigns.nvim')
 
-	-- use('lukas-reineke/indent-blankline.nvim')
+  -- use('lukas-reineke/indent-blankline.nvim')
 
-	-- weergave van afbeeldingen
-	use({
-		'princejoogie/chafa.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			'm00qek/baleia.nvim',
-		},
-	})
+  -- weergave van afbeeldingen
+  use({
+    'princejoogie/chafa.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'm00qek/baleia.nvim',
+    },
+  })
 
-	use('akinsho/toggleterm.nvim')
+  use('akinsho/toggleterm.nvim')
 
-	use('projekt0n/github-nvim-theme')
+  use('projekt0n/github-nvim-theme')
 
   use('mfussenegger/nvim-dap')
   use('leoluz/nvim-dap-go')
   use('rcarriga/nvim-dap-ui')
   use('theHamsta/nvim-dap-virtual-text')
   use('nvim-telescope/telescope-dap.nvim')
+  use('jbyuki/one-small-step-for-vimkind')
 
-	-- end plugins
-	--------
+  -- end plugins
+  --------
 
-	if packer_bootstrap then
-		require('packer').sync()
-	end
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

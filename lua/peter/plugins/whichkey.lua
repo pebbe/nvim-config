@@ -6,8 +6,9 @@ end
 
 wk.setup({})
 wk.register({
+	a = { name = 'Status line' },
 	b = { name = 'Buffers' },
-  D = { name = 'Debug' },
+	D = { name = 'Debug' },
 	f = { name = 'Find', c = { name = 'Calls' } },
 	g = { name = 'Git' },
 	t = { name = 'Tabs' },

@@ -54,6 +54,14 @@ k('n', '<C-j>', ':resize -2<CR>', d('window smaller'))
 k('n', '<leader>bn', ':bnext<CR>', d('next buffer'))
 k('n', '<leader>bp', ':bprevious<CR>', d('previous buffer'))
 
+k(
+	'n',
+	'<leader>a1',
+	':set laststatus=3<CR>:highlight WinSeparator guibg=None<CR>:set winbar=%=%m\\ %t<CR>',
+	d('Single')
+)
+k('n', '<leader>a2', ':set laststatus=2<CR>:highlight clear WinSeparator<CR>:set winbar=<CR>', d('Multiple'))
+
 -- Case
 k('n', '<leader>u', 'gUww', d('UPPERCASE'))
 k('n', '<leader>U', 'gU<Right>w', d('Uppercase'))
@@ -101,6 +109,7 @@ k('n', '<F4>', cd.cd, d('Sessies'))
 k('n', '<F5>', ':ls!<CR>', d('List buffers'))
 
 local dap = require('dap')
+local ui = require('dapui')
 k('n', '<F9>', dap.continue, d('Debug: continue'))
 k('n', '<F10>', dap.step_over, d('Debug: step over'))
 k('n', '<F11>', dap.step_into, d('Debug: step into'))
@@ -113,6 +122,10 @@ k('n', '<leader>Dm', function()
 	dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
 end, d('Breakpoint with message'))
 k('n', '<leader>Dr', dap.repl.open, d('REPL'))
+k('n', '<leader>Dq', ui.close, d('Quit UI'))
+k('n', '<leader>Dl', function()
+	require('osv').launch({ port = 8186 })
+end, d('Start Lua server'))
 
 -- Visual --------------------------------------
 
