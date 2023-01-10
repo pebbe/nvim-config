@@ -84,7 +84,7 @@ k('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', d('previous hunk'))
 k('n', '<leader>gh', ':Gitsigns preview_hunk<CR>', d('view hunk'))
 k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 
--- lsp 
+-- lsp
 k('n', '<leader>do', ':lua vim.diagnostic.config({virtual_text=true })<CR>', d('messages open'))
 k('n', '<leader>dc', ':lua vim.diagnostic.config({virtual_text=false})<CR>', d('messages close'))
 
@@ -99,6 +99,20 @@ local cd = require('peter.core.cd')
 k('n', '<F4>', cd.cd, d('Sessies'))
 
 k('n', '<F5>', ':ls!<CR>', d('List buffers'))
+
+local dap = require('dap')
+k('n', '<F9>', dap.continue, d('Debug: continue'))
+k('n', '<F10>', dap.step_over, d('Debug: step over'))
+k('n', '<F11>', dap.step_into, d('Debug: step into'))
+k('n', '<F12>', dap.step_out, d('Debug: step out'))
+k('n', '<leader>Db', dap.toggle_breakpoint, d('Toggle breakpoint'))
+k('n', '<leader>Dc', function()
+	dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+end, d('Breakpoint with condition'))
+k('n', '<leader>Dm', function()
+	dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+end, d('Breakpoint with message'))
+k('n', '<leader>Dr', dap.repl.open, d('REPL'))
 
 -- Visual --------------------------------------
 

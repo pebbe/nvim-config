@@ -134,6 +134,14 @@ return packer.startup(function(use)
 
 	use('akinsho/toggleterm.nvim')
 
+	use('projekt0n/github-nvim-theme')
+
+  use('mfussenegger/nvim-dap')
+  use('leoluz/nvim-dap-go')
+  use('rcarriga/nvim-dap-ui')
+  use('theHamsta/nvim-dap-virtual-text')
+  use('nvim-telescope/telescope-dap.nvim')
+
 	-- end plugins
 	--------
 
