@@ -84,3 +84,11 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.bo.tabstop = 4
 	end,
 })
+
+vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
+  pattern = { '*.v' },
+  callback = function()
+    vim.cmd.setfiletype('v')
+  end
+})
+

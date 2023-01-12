@@ -66,6 +66,7 @@ dap.configurations.c = {
 }
 dap.configurations.cpp = dap.configurations.c
 dap.configurations.rust = dap.configurations.c
+dap.configurations.zig = dap.configurations.c
 
 dap.adapters.python = {
 	type = 'executable',
@@ -82,15 +83,3 @@ dap.configurations.python = {
 		program = '${file}',
 	},
 }
-
--- https://github.com/jbyuki/one-small-step-for-vimkind
-dap.configurations.lua = {
-	{
-		type = 'nlua',
-		request = 'attach',
-		name = 'Attach to running Neovim instance',
-	},
-}
-dap.adapters.nlua = function(callback, _)
-	callback({ type = 'server', host = '127.0.0.1', port = 8186 })
-end
