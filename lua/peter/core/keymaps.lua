@@ -64,7 +64,7 @@ k('n', '<leader>a2', ':set laststatus=2<CR>:highlight clear WinSeparator<CR>:set
 
 -- Case
 k('n', '<leader>u', 'gUww', d('UPPERCASE'))
-k('n', '<leader>U', 'gU<Right>w', d('Uppercase'))
+k('n', '<leader>U', 'gU<Right><Right>guww', d('Uppercase'))
 k('n', '<leader>l', 'guww', d('lowercase'))
 
 -- Search
