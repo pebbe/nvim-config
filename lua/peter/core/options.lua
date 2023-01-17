@@ -86,9 +86,8 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
-  pattern = { '*.v' },
-  callback = function()
-    vim.cmd.setfiletype('v')
-  end
+	pattern = { '*.v' },
+	callback = function()
+		vim.cmd.setfiletype('v')
+	end,
 })
-
