@@ -34,6 +34,8 @@ end
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
 
+opt.whichwrap = '<,>,[,]'
+
 -- clipboard
 opt.clipboard:append('unnamedplus') -- use system clipboard as default register
 
@@ -47,7 +49,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 vim.g.loaded_perl_provider = 0
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'text', 'markdown' },
+	pattern = { 'mail', 'markdown', 'text'},
 	callback = function()
 		--local buf = vim.fn.expand("<abuf>")
 		--local file = vim.fn.expand("<afile>")
@@ -58,8 +60,12 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.wo.linebreak = true
 		vim.bo.textwidth = 72
 
+    if match == 'mail' then
+      vim.bo.textwidth = 64
+    end
+
 		-- tabs & indentation
-		if match == 'markdown' then
+		if match ~= 'text' then
 			vim.bo.expandtab = true -- expand tab to spaces
 		end
 
