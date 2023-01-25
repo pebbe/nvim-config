@@ -2,15 +2,6 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 
 telescope.setup({
-  --[[
-  extensions = {
-    project = {
-      base_dirs = {
-        '~/.nvim/config/nvim' -- ???
-      },
-    },
-  },
-  --]]
   defaults = {
     file_ignore_patterns = {
       '~$',
