@@ -5,6 +5,7 @@ local servers = {
 	'html', -- HTML
 	'lemminx', -- XML
 	'pyright', -- Python
+  'rust_analyzer', -- Rust
 	'sumneko_lua', -- Lua
 	'svelte', -- Svelte
 	'tsserver', -- JavaScript, TypeScript

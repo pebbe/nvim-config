@@ -10,6 +10,9 @@ end
 
 -- normal -------------------------------------------------------
 
+k('n', '<leader>q', ':bd<cr>', d('Sluit buffer'))
+k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
+
 -- spelling
 k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d('Nederlands'))
 k('n', '<leader>xe', ':w<cr>:terminal aspell --lang=en check %<cr>:e! %<cr>', d('Engels'))
@@ -78,6 +81,7 @@ k('n', '<leader>fb', b.buffers, d('buffers'))
 k('n', '<leader>fh', b.help_tags, d('help tags'))
 k('n', '<leader>fr', b.lsp_references, d('references'))
 k('n', '<leader>fd', b.lsp_definitions, d('definition'))
+k('n', '<leader>fD', b.diagnostics, d('diagnostics'))
 k('n', '<leader>fci', b.lsp_incoming_calls, d('incoming calls'))
 k('n', '<leader>fco', b.lsp_outgoing_calls, d('outgoing call'))
 k('n', '<leader>fi', b.lsp_implementations, d('implementations'))
