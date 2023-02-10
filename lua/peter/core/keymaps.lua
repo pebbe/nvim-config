@@ -12,6 +12,9 @@ end
 
 k('n', '<leader>q', ':bd<cr>', d('Sluit buffer'))
 k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
+k('n', '<leader>p', ':echo expand("%:p")<cr>', d('Toon volledig path naar huidig bestand'))
+k('n', '<leader>P', ':cd %:p:h<cr>', d('Chdir naar directory van huidig bestand'))
+
 
 -- spelling
 k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d('Nederlands'))
