@@ -48,6 +48,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- checkhealth: geen waarschuwing voor perl_provider
 vim.g.loaded_perl_provider = 0
 
+vim.notify = require("notify")
+
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = { 'mail', 'markdown', 'text'},
 	callback = function()
