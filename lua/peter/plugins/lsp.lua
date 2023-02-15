@@ -4,9 +4,9 @@ local servers = {
 	'gopls', -- Go
 	'html', -- HTML
 	'lemminx', -- XML
+	'lua_ls', -- Lua
 	'pyright', -- Python
   'rust_analyzer', -- Rust
-	'sumneko_lua', -- Lua
 	'svelte', -- Svelte
 	'tsserver', -- JavaScript, TypeScript
 	'vls', -- V
@@ -43,7 +43,7 @@ local l = require('lspconfig')
 --   https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 for _, server in pairs(servers) do
-	if server == 'sumneko_lua' then
+	if server == 'lua_ls' then
 		l[server].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
