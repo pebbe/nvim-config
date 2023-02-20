@@ -9,12 +9,14 @@ gotham256
 iceberg
 nightfly
 tokyonight-night
+bluloco-dark
 
 LICHT
 
 OceanicNextLight
 PaperColor
 rdark-terminal2
+bluloco-light
 
 --]]
 

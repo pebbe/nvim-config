@@ -89,6 +89,7 @@ k('n', '<leader>fci', b.lsp_incoming_calls, d('incoming calls'))
 k('n', '<leader>fco', b.lsp_outgoing_calls, d('outgoing call'))
 k('n', '<leader>fi', b.lsp_implementations, d('implementations'))
 k('n', '<leader>ft', b.lsp_type_definitions, d('type definition'))
+k('n', '<leader>fq', b.quickfix, d('quick fix'))
 
 k('n', '<leader>gb', b.git_branches, d('branches'))
 k('n', '<leader>gc', b.git_commits, d('commits'))

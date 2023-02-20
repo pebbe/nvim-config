@@ -9,6 +9,9 @@ nt.setup({
 			never_show = {
 				'.dc',
 			},
+			hide_by_pattern = {
+				'*~',
+			},
 		},
 	},
 })
