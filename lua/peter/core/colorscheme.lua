@@ -22,7 +22,7 @@ bluloco-light
 
 local colorscheme = 'nightfly'
 if vim.api.nvim_get_option_value('background', {}) == 'light' then
-	colorscheme = 'OceanicNextLight'
+	colorscheme = 'bluloco-light'
 end
 
 local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
