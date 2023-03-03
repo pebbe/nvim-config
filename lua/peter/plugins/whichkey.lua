@@ -8,6 +8,7 @@ wk.setup({})
 wk.register({
 	a = { name = 'Status line' },
 	b = { name = 'Buffers' },
+	d = { mame = 'Diagnostics' },
 	D = { name = 'Debug' },
 	f = { name = 'Find', c = { name = 'Calls' } },
 	g = { name = 'Git' },

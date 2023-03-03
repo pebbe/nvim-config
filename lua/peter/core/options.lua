@@ -25,11 +25,11 @@ if vim.fn.environ()['TERM'] == 'xterm-256color' then
 	vim.opt.termguicolors = true
 end
 
-if vim.fn.system('dag') == 'dag\n' then
+--if vim.fn.system('dag') == 'dag\n' then
 	vim.opt.background = 'light'
-else
-	vim.opt.background = 'dark'
-end
+--else
+--	vim.opt.background = 'dark'
+--end
 
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position

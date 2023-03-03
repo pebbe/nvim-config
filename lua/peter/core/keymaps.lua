@@ -74,7 +74,7 @@ k('n', '<leader>U', 'gU<Right><Right>guww', d('Uppercase'))
 k('n', '<leader>l', 'guww', d('lowercase'))
 
 -- Search
-k('n', '<leader>c', ':noh<CR>', d('clear search'))
+k('n', '<leader> ', ':noh<CR>', d('clear search'))
 
 -- telescope
 local b = require('telescope.builtin')
