@@ -119,6 +119,9 @@ k('n', '<F4>', cd.cd, d('Sessies'))
 
 k('n', '<F5>', ':ls!<CR>', d('List buffers'))
 
+k('n', '<F6>', ':set list<CR>', d('Show specials'))
+k('n', '<F7>', ':set nolist<CR>', d('Hide specials'))
+
 local dap = require('dap')
 local ui = require('dapui')
 k('n', '<F9>', dap.continue, d('Debug: continue'))
