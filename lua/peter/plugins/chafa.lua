@@ -1,5 +1,5 @@
-local cmp_status_ok, chafa = pcall(require, 'chafa')
-if not cmp_status_ok then
+local status_ok, chafa = pcall(require, 'chafa')
+if not status_ok then
   return
 end
 

@@ -99,3 +99,13 @@ vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
 		vim.cmd.setfiletype('v')
 	end,
 })
+
+opt.foldmethod="expr"
+opt.foldexpr="nvim_treesitter#foldexpr()"
+vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
+	pattern = { '*' },
+	callback = function()
+		vim.wo.foldlevel = 99999
+	end,
+})
+

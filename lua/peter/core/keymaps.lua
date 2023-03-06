@@ -106,6 +106,9 @@ k('n', '<leader>dc', ':lua vim.diagnostic.config({virtual_text=false})<CR>', d('
 
 -- neo-tree
 k('n', '<F2>', ':Neotree toggle<CR>', d('Neotree'))
+
+k('n', '<F3>', ':TagbarToggle<CR>', d('Tagbar'))
+
 k('n', '<F8>', ':Telescope buffers<CR>', d('Show buffers'))
 
 k('n', '<F1>', ':vertical help<cr>', d('Help'))

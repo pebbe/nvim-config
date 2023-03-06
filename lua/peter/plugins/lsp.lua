@@ -1,5 +1,6 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 local servers = {
+  'bashls', -- bash
 	'clangd', -- C, C++
 	'gopls', -- Go
 	'html', -- HTML
