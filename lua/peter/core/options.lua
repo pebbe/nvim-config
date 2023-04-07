@@ -96,17 +96,24 @@ vim.api.nvim_create_autocmd('FileType', {
 	end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
+vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
 	pattern = { '*.ttl' },
 	callback = function()
 		vim.cmd.setfiletype('turtle')
 	end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
+vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
 	pattern = { '*.v' },
 	callback = function()
 		vim.cmd.setfiletype('v')
+	end,
+})
+
+vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
+	pattern = { '*.jsonld' },
+	callback = function()
+		vim.cmd.setfiletype('json')
 	end,
 })
 

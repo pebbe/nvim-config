@@ -4,6 +4,7 @@ local servers = {
 	'clangd', -- C, C++
 	'gopls', -- Go
 	'html', -- HTML
+  'jsonls', -- JSON
 	'lemminx', -- XML
 	'lua_ls', -- Lua
 	'pyright', -- Python
