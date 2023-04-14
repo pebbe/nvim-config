@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'css', 'html', 'javascript', 'lua', 'svelte', 'xml' },
+	pattern = { 'css', 'html', 'javascript', 'json', 'lua', 'svelte', 'xml' },
 	callback = function()
 		vim.bo.expandtab = true
 		vim.bo.tabstop = 2
