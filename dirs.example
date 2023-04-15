@@ -1,2 +1,2 @@
-label 1 | ~/dir/dir1
-label 2 | ~/dir/dir/dir2
+label 1 | category 1 | ~/dir/dir1
+label 2 | category 2 | ~/dir/dir/dir2
