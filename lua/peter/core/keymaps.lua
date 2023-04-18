@@ -5,7 +5,7 @@ local opts = { noremap = true, silent = true }
 --local term_opts = { silent = true }
 
 local d = function(txt)
-  return { noremap = true, silent = true, desc = txt }
+	return { noremap = true, silent = true, desc = txt }
 end
 
 -- normal -------------------------------------------------------
@@ -14,7 +14,6 @@ k('n', '<leader>q', ':bd<cr>', d('Sluit buffer'))
 k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
 k('n', '<leader>p', ':echo expand("%:p")<cr>', d('Toon volledig path naar huidig bestand'))
 k('n', '<leader>P', ':cd %:p:h<cr>', d('Chdir naar directory van huidig bestand'))
-
 
 -- spelling
 k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d('Nederlands'))
@@ -61,10 +60,10 @@ k('n', '<leader>bn', ':bnext<CR>', d('next buffer'))
 k('n', '<leader>bp', ':bprevious<CR>', d('previous buffer'))
 
 k(
-  'n',
-  '<leader>a1',
-  ':set laststatus=3<CR>:highlight WinSeparator guibg=None<CR>:set winbar=%=%m\\ %t<CR>',
-  d('Single')
+	'n',
+	'<leader>a1',
+	':set laststatus=3<CR>:highlight WinSeparator guibg=None<CR>:set winbar=%=%m\\ %t<CR>',
+	d('Single')
 )
 k('n', '<leader>a2', ':set laststatus=2<CR>:highlight clear WinSeparator<CR>:set winbar=<CR>', d('Multiple'))
 
@@ -104,8 +103,8 @@ k('n', '<leader>gl', ':Gitsigns blame_line<CR>', d('blame line'))
 k('n', '<leader>do', ':lua vim.diagnostic.config({virtual_text=true })<CR>', d('messages open'))
 k('n', '<leader>dc', ':lua vim.diagnostic.config({virtual_text=false})<CR>', d('messages close'))
 
--- neo-tree
-k('n', '<F2>', ':Neotree toggle<CR>', d('Neotree'))
+-- neo-tree<F2>
+k('n', '<F2>', ':Neotree toggle reveal_force_cwd<CR>', d('Neotree'))
 
 k('n', '<F3>', ':TagbarToggle<CR>', d('Tagbar'))
 
@@ -130,10 +129,10 @@ k('n', '<F11>', dap.step_into, d('Debug: step into'))
 k('n', '<F12>', dap.step_out, d('Debug: step out'))
 k('n', '<leader>Db', dap.toggle_breakpoint, d('Toggle breakpoint'))
 k('n', '<leader>Dc', function()
-  dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+	dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
 end, d('Breakpoint with condition'))
 k('n', '<leader>Dm', function()
-  dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+	dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
 end, d('Breakpoint with message'))
 k('n', '<leader>Dr', dap.repl.open, d('REPL'))
 k('n', '<leader>Dq', ui.close, d('Quit UI'))

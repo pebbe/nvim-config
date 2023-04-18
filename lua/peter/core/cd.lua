@@ -1,3 +1,5 @@
+-- zie: https://imfeld.dev/writing/creating_a_custom_command_bar_in_neovim
+
 local M = {}
 
 local commands = {}

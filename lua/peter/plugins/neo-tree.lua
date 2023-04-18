@@ -1,17 +1,17 @@
 local status, nt = pcall(require, 'neo-tree')
 if not status then
-	return
+  return
 end
 
 nt.setup({
-	filesystem = {
-		filtered_items = {
-			never_show = {
-				'.dc',
-			},
-			hide_by_pattern = {
-				'*~',
-			},
-		},
-	},
+  filesystem = {
+    filtered_items = {
+      never_show = {
+        '.dc',
+      },
+      hide_by_pattern = {
+        '*~',
+      },
+    },
+  },
 })
