@@ -27,7 +27,7 @@ opt.signcolumn = 'yes' -- 'number' -- show sign column so that text doesn't shif
 -- maakt het mogelijk de cursor te verplaatsen naar waar niks is
 opt.virtualedit = 'block'
 
-if vim.fn.environ()['TERM'] == 'xterm-256color' then
+if vim.fn.environ()['TERM'] == 'xterm-256color' or vim.fn.environ()['TERM'] == 'screen-256color' then
 	vim.opt.termguicolors = true
 end
 
