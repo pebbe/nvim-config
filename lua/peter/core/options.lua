@@ -24,6 +24,9 @@ opt.cursorline = true -- highlight the current cursor line
 
 opt.signcolumn = 'yes' -- 'number' -- show sign column so that text doesn't shift
 
+-- maakt het mogelijk de cursor te verplaatsen naar waar niks is
+opt.virtualedit = 'block'
+
 if vim.fn.environ()['TERM'] == 'xterm-256color' then
 	vim.opt.termguicolors = true
 end
@@ -73,9 +76,6 @@ vim.api.nvim_create_autocmd('FileType', {
 		if match ~= 'text' then
 			vim.bo.expandtab = true -- expand tab to spaces
 		end
-
-		-- maakt het mogelijk de cursor te verplaatsen naar waar niks is
-		vim.wo.virtualedit = 'all'
 	end,
 })
 
