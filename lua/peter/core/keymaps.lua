@@ -20,6 +20,7 @@ k('n', '<leader>xn', ':w<cr>:terminal aspell --lang=nl check %<cr>:e! %<cr>', d(
 k('n', '<leader>xe', ':w<cr>:terminal aspell --lang=en check %<cr>:e! %<cr>', d('Engels'))
 k('n', '<leader>N', ':setlocal spell spelllang=nl<CR>', d('Nederlandse spelling'))
 k('n', '<leader>E', ':setlocal spell spelllang=en<CR>', d('Engelse spelling'))
+k('n', '<leader>G', ':setlocal spell spelllang=de<CR>', d('Duitse spelling'))
 
 -- movement
 k('n', 'j', 'gj', opts)
