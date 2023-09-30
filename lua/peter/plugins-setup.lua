@@ -168,6 +168,13 @@ return packer.startup(function(use)
   end
 }
     --]]
+
+  use {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+  }
+
   -- end plugins
   --------
 
