@@ -1,27 +1,6 @@
 if vim.g.vscode then
-	return
+        return
 end
 
-require('peter.plugins-setup')
-require('peter.core.options')
-require('peter.core.keymaps')
-require('peter.core.colorscheme')
-require('peter.core.cd')
-require('peter.plugins.lsp')
-require('peter.plugins.cmp')
-require('peter.plugins.lualine')
--- require('peter.plugins.cokeline')
-require('peter.plugins.treesitter')
-require('peter.plugins.telescope')
-require('peter.plugins.comment')
-require('peter.plugins.gitsigns')
-require('peter.plugins.null-ls')
-require('peter.plugins.neo-tree')
-require('peter.plugins.whichkey')
--- require('peter.plugins.indent_blankline')
-require('peter.plugins.chafa')
-require('peter.plugins.toggleterm')
-require('peter.plugins.dap')
-require('peter.plugins.notify')
-require('peter.plugins.tagbar')
-require('peter.plugins.neorg')
+require('peter.core')
+require('peter.lazy')

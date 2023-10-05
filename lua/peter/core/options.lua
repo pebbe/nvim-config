@@ -1,7 +1,6 @@
 local opt = vim.opt -- for conciseness
 
-
-opt.listchars = "tab:>-,trail:•,extends:»,precedes:«,nbsp:␣"
+opt.listchars = 'tab:>-,trail:•,extends:»,precedes:«,nbsp:␣'
 
 -- backups
 opt.backup = true
@@ -27,17 +26,6 @@ opt.signcolumn = 'yes' -- 'number' -- show sign column so that text doesn't shif
 -- maakt het mogelijk de cursor te verplaatsen naar waar niks is
 opt.virtualedit = 'block'
 
-local term = vim.fn.environ()['TERM']
-if term == 'xterm-256color' or term == 'screen-256color' or term == 'tmux-256color' then
-	vim.opt.termguicolors = true
-end
-
---if vim.fn.system('dag') == 'dag\n' then
-	vim.opt.background = 'light'
---else
---	vim.opt.background = 'dark'
---end
-
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position
 
@@ -56,76 +44,3 @@ opt.splitbelow = true -- split horizontal window to the bottom
 vim.g.loaded_perl_provider = 0
 
 vim.g.python3_host_prog = '/usr/bin/python3'
-
-vim.notify = require("notify")
-
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'mail', 'markdown', 'text'},
-	callback = function()
-		--local buf = vim.fn.expand("<abuf>")
-		--local file = vim.fn.expand("<afile>")
-		local match = vim.fn.expand('<amatch>')
-
-		-- line wrapping
-		vim.wo.wrap = true
-		vim.wo.linebreak = true
-		vim.bo.textwidth = 72
-
-    if match == 'mail' then
-      vim.bo.textwidth = 64
-    end
-
-		-- tabs & indentation
-		if match ~= 'text' then
-			vim.bo.expandtab = true -- expand tab to spaces
-		end
-	end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'css', 'html', 'javascript', 'json', 'lua', 'svelte', 'xml' },
-	callback = function()
-		vim.bo.expandtab = true
-		vim.bo.tabstop = 2
-		vim.bo.softtabstop = 2 -- wanneer je TAB toetst
-		vim.bo.shiftwidth = 2 -- automatisch inspringen
-	end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'go' },
-	callback = function()
-		vim.bo.tabstop = 4
-	end,
-})
-
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
-	pattern = { '*.ttl' },
-	callback = function()
-		vim.cmd.setfiletype('turtle')
-	end,
-})
-
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
-	pattern = { '*.v' },
-	callback = function()
-		vim.cmd.setfiletype('v')
-	end,
-})
-
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
-	pattern = { '*.jsonld' },
-	callback = function()
-		vim.cmd.setfiletype('json')
-	end,
-})
-
-opt.foldmethod="expr"
-opt.foldexpr="nvim_treesitter#foldexpr()"
-vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
-	pattern = { '*' },
-	callback = function()
-		vim.wo.foldlevel = 99999
-	end,
-})
-
