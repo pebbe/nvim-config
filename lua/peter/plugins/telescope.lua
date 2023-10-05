@@ -1,7 +1,11 @@
 return {
 	'nvim-telescope/telescope.nvim',
 	tag = '0.1.3', -- or: branch = '0.1.x',
-	dependencies = { 'nvim-lua/plenary.nvim' },
+	dependencies = {
+    'nvim-lua/plenary.nvim',
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+  },
 	config = function()
 		local telescope = require('telescope')
 		local actions = require('telescope.actions')
@@ -21,6 +25,9 @@ return {
 				},
 			},
 		})
+
+    telescope.load_extension("fzf")
+
 		local k = vim.keymap.set
 		local d = function(txt)
 			return { noremap = true, silent = true, desc = txt }
