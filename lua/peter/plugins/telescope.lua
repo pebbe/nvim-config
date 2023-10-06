@@ -2,10 +2,10 @@ return {
 	'nvim-telescope/telescope.nvim',
 	tag = '0.1.3', -- or: branch = '0.1.x',
 	dependencies = {
-    'nvim-lua/plenary.nvim',
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-tree/nvim-web-devicons",
-  },
+		'nvim-lua/plenary.nvim',
+		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		'nvim-tree/nvim-web-devicons',
+	},
 	config = function()
 		local telescope = require('telescope')
 		local actions = require('telescope.actions')
@@ -26,7 +26,7 @@ return {
 			},
 		})
 
-    telescope.load_extension("fzf")
+		telescope.load_extension('fzf')
 
 		local k = vim.keymap.set
 		local d = function(txt)
@@ -56,8 +56,5 @@ return {
 		k('n', '<leader>gl', '<cmd>Gitsigns blame_line<CR>', d('blame line'))
 
 		k('n', '<F8>', '<cmd>Telescope buffers<CR>', d('Show buffers'))
-
-		local cd = require('peter.core.cd')
-		k('n', '<F4>', cd.cd, d('Sessies'))
 	end,
 }
