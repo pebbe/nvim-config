@@ -9,3 +9,15 @@ TODO:
 - [ ] Installeren: alternatief voor null-ls
 - [ ] Installeren: dap
 - [ ] Ook lvim (light nvim) opnieuw, nu met lazy
+
+Fouten met fonts zit waarschijnlijk in nvim-web-devicons. Voorbeeld:
+
+```
+["R"] = {
+  icon = "󰟔",
+  color = "#358a5b",
+  cterm_color = "29",
+  name = "R",
+},
+```
+
