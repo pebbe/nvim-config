@@ -5,6 +5,6 @@ TODO:
 - [ ] Alternatief voor nvim-neo-tree/neo-tree.nvim: https://github.com/nvim-tree/nvim-tree.lua
 - [ ] Aanpassen: nvim-cmp
 - [x] Installeren: lsp
-- [ ] Installeren: alternatief voor null-ls
+- [x] Installeren: alternatief voor null-ls
 - [ ] Installeren: dap
 - [ ] Ook lvim (light nvim) opnieuw, nu met lazy

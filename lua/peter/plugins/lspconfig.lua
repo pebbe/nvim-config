@@ -11,43 +11,22 @@ return {
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-    local opts = { noremap = true, silent = true }
-    local k = vim.keymap -- for conciseness
     local on_attach = function(_, bufnr)
-      opts.buffer = bufnr
-
-      opts.desc = 'Hover'
-      k.set('n', '<leader>K', vim.lsp.buf.hover, opts)
-
-      opts.desc = 'Definition'
-      k.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
-
-      opts.desc = 'Type definition'
-      k.set('n', '<leader>gt', vim.lsp.buf.type_definition, opts)
-
-      opts.desc = 'Implementation'
-      k.set('n', '<leader>gi', vim.lsp.buf.implementation, opts)
-
-      opts.desc = 'References'
-      k.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', opts)
-
-      opts.desc = 'Code action'
-      k.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-
-      opts.desc = 'Rename'
-      k.set('n', '<leader>r', vim.lsp.buf.rename, opts)
-
-      opts.desc = 'Next issue'
-      k.set('n', '<leader>dn', vim.diagnostic.goto_next, opts)
-
-      opts.desc = 'Previous issue'
-      k.set('n', '<leader>dp', vim.diagnostic.goto_prev, opts)
-
-      opts.desc = 'All diagnostics'
-      k.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', opts)
-
-      opts.desc = 'Diagnostics'
-      k.set('n', '<leader>dd', vim.diagnostic.open_float, opts)
+      local k = vim.keymap
+      local d = function(txt)
+        return { noremap = true, silent = true, buffer = bufnr, desc = txt }
+      end
+      k.set('n', '<leader>K', vim.lsp.buf.hover, d('Hover'))
+      k.set('n', '<leader>gd', vim.lsp.buf.definition, d('Definition'))
+      k.set('n', '<leader>gt', vim.lsp.buf.type_definition, d('Type definition'))
+      k.set('n', '<leader>gi', vim.lsp.buf.implementation, d('Implementation'))
+      k.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', d('References'))
+      k.set('n', '<leader>ca', vim.lsp.buf.code_action, d('Code action'))
+      k.set('n', '<leader>r', vim.lsp.buf.rename, d('Rename'))
+      k.set('n', '<leader>dn', vim.diagnostic.goto_next, d('Next issue'))
+      k.set('n', '<leader>dp', vim.diagnostic.goto_prev, d('Previous issue'))
+      k.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', d('All diagnostics'))
+      k.set('n', '<leader>dd', vim.diagnostic.open_float, d('Diagnostics'))
     end
 
     -- configuratie van servers:
@@ -83,14 +62,6 @@ return {
               },
             },
           },
-        })
-      elseif server == 'lemminx' or server == 'tsserver' then
-        -- TODO: dit werkt niet meer
-        local cap = require('cmp_nvim_lsp').default_capabilities()
-        cap.document_formatting = false
-        l[server].setup({
-          capabilities = cap,
-          on_attach = on_attach,
         })
       else
         l[server].setup({
