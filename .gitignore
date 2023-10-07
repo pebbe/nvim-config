@@ -1,3 +1,4 @@
-dirs
-spell
 *.tmp
+dirs
+lazy-lock.json
+spell
