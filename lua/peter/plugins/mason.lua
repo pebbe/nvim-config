@@ -28,17 +28,7 @@ return {
     })
 
     mason_tool_installer.setup({
-      ensure_installed = {
-        -- formatters
-        'gofumpt', -- go
-        'prettier', -- html, css, less, scss, javascript, typescript, json, yaml
-        'stylua', -- lua
-        'yapf', -- python
-        --linters
-        'eslint_d', -- js
-        'golangci-lint', -- go
-        'pylint', -- python
-      },
+      ensure_installed = require('peter.plugins.lsp.tools'),
     })
   end,
 }
