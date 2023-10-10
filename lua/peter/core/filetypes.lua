@@ -21,28 +21,28 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { '*.ttl' },
   callback = function()
     vim.cmd.setfiletype('turtle')
   end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { '*.v' },
   callback = function()
     vim.cmd.setfiletype('v')
   end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile,BufFilePost', {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { '*.jsonld' },
   callback = function()
     vim.cmd.setfiletype('json')
   end,
 })
 
-vim.api.nvim_create_autocmd('BufRead,BufNewFile', {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
   pattern = { '*' },
   callback = function()
     vim.wo.foldlevel = 99999
