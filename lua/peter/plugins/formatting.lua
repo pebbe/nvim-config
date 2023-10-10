@@ -11,7 +11,13 @@ return {
     conform.setup({
       formatters_by_ft = {
         -- https://github.com/stevearc/conform.nvim#formatters
+        bash = { 'beautysh' },
+        c = { 'clang-fomat' },
+        cpp = { 'clang-format' },
+        -- c = { 'uncrustify' },
+        -- cpp = { 'uncrustify' },
         css = { 'prettier' },
+        dart = { 'dart_format' },
         go = { 'gofumpt' },
         html = { 'prettier' },
         javascript = { 'prettier' },
@@ -19,8 +25,10 @@ return {
         less = { 'prettier' },
         lua = { 'stylua' },
         scss = { 'prettier' },
+        sh = { 'beautysh' },
         svelte = { 'prettier' },
         typescript = { 'prettier' },
+        xml = { 'xmlformat' },
         yaml = { 'prettier' },
       },
       format_on_save = options,

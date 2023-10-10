@@ -42,6 +42,13 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { 'go.mod' },
+  callback = function()
+    vim.cmd.setfiletype('gomod')
+  end,
+})
+
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
   pattern = { '*' },
   callback = function()
