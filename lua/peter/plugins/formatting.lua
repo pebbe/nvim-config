@@ -19,7 +19,7 @@ return {
         css = { 'prettier' },
         dart = { 'dart_format' },
         go = { 'gofumpt' },
-        html = { 'prettier' },
+        -- html = { 'prettier' }, -- de default werkt beter
         javascript = { 'prettier' },
         json = { 'prettier' },
         less = { 'prettier' },
@@ -28,7 +28,7 @@ return {
         sh = { 'beautysh' },
         svelte = { 'prettier' },
         typescript = { 'prettier' },
-        xml = { 'xmlformat' },
+        -- xml = { 'xmlformat' }, -- de default werkt beter
         yaml = { 'prettier' },
       },
       format_on_save = options,
