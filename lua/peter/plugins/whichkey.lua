@@ -18,6 +18,7 @@ return {
       g = { name = 'Git' },
       O = { name = 'Neorg' },
       t = { name = 'Tabs' },
+      c = { name = 'Completion', c = { name = 'Local completion' }, g = { name = 'Global completion' } },
       x = { name = 'Spelling' },
     }, {
       prefix = '<leader>',

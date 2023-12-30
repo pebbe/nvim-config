@@ -5,10 +5,15 @@ local opts = { noremap = true, silent = true }
 --local term_opts = { silent = true }
 
 local d = function(txt)
-	return { noremap = true, silent = true, desc = txt }
+  return { noremap = true, silent = true, desc = txt }
 end
 
 -- normal -------------------------------------------------------
+
+k('n', '<leader>cg1', ':lua require(\'cmp\').setup { enabled = true }<CR>', d('enable global completion'))
+k('n', '<leader>cg0', ':lua require(\'cmp\').setup { enabled = false }<CR>', d('disable global completion'))
+k('n', '<leader>cc1', ':lua require(\'cmp\').setup.buffer { enabled = true }<CR>', d('enable local completion'))
+k('n', '<leader>cc0', ':lua require(\'cmp\').setup.buffer { enabled = false }<CR>', d('disable local completion'))
 
 k('n', '<leader>q', ':bd<cr>', d('Sluit buffer'))
 k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
@@ -59,10 +64,10 @@ k('n', '<leader>bn', ':bnext<CR>', d('next buffer'))
 k('n', '<leader>bp', ':bprevious<CR>', d('previous buffer'))
 
 k(
-	'n',
-	'<leader>a1',
-	':set laststatus=3<CR>:highlight WinSeparator guibg=None<CR>:set winbar=%=%m\\ %t<CR>',
-	d('Single')
+  'n',
+  '<leader>a1',
+  ':set laststatus=3<CR>:highlight WinSeparator guibg=None<CR>:set winbar=%=%m\\ %t<CR>',
+  d('Single')
 )
 k('n', '<leader>a2', ':set laststatus=2<CR>:highlight clear WinSeparator<CR>:set winbar=<CR>', d('Multiple'))
 
@@ -77,7 +82,6 @@ k('n', '<leader> ', ':noh<CR>', d('clear search'))
 -- lsp
 k('n', '<leader>do', ':lua vim.diagnostic.config({virtual_text=true })<CR>', d('messages open'))
 k('n', '<leader>dc', ':lua vim.diagnostic.config({virtual_text=false})<CR>', d('messages close'))
-
 
 k('n', '<F1>', ':vertical help<cr>', d('Help'))
 k('n', '<leader>h', ':vertical help ', d('Help'))
@@ -101,8 +105,8 @@ k('v', 'p', '"_dP', opts)
 -- Visual Block ------------------------------------
 
 -- Move text up and down
-k('x', '<A-j>', ":move '>+1<CR>gv-gv", opts) -- verplaats meerdere regels omlaag
-k('x', '<A-k>', ":move '<-2<CR>gv-gv", opts) -- verplaats meerdere regels omhoog
+k('x', '<A-j>', ':move \'>+1<CR>gv-gv', opts) -- verplaats meerdere regels omlaag
+k('x', '<A-k>', ':move \'<-2<CR>gv-gv', opts) -- verplaats meerdere regels omhoog
 
 -- -- Terminal ------------------------------------
 --
