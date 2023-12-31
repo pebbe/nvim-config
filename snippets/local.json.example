@@ -1,0 +1,7 @@
+{
+  "Test": {
+    "prefix": "test",
+    "body": "Dit is een test",
+    "description": "Test"
+  }
+}

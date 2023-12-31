@@ -3,6 +3,7 @@ return {
   event = 'InsertEnter',
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
+    'hrsh7th/cmp-calc', -- math calculation
     'hrsh7th/cmp-path', -- source for file system paths
     'L3MON4D3/LuaSnip', -- snippet engine
     'saadparwaiz1/cmp_luasnip', -- for autocompletion
@@ -15,7 +16,9 @@ return {
     local lspkind = require('lspkind')
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-    require('luasnip.loaders.from_vscode').lazy_load()
+    local vsc = require('luasnip.loaders.from_vscode')
+    vsc.lazy_load()
+    pcall(vsc.lazy_load, { paths = './snippets/' }) -- pcall voor plaatsen waar local.json niet aanwezig is
 
     cmp.setup({
       completion = {
@@ -43,6 +46,7 @@ return {
         { name = 'luasnip' }, -- snippets
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
+        { name = 'calc' }, -- math calculation:w
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
