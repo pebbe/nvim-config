@@ -6,6 +6,8 @@ loadkeymap
 ij ĳ
 IJ Ĳ
 fl ƒ
+\"e ë
+'e é
 ,, „
 '' ”
 

@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'mail', 'markdown', 'text' },
+  pattern = { 'mail', 'markdown', 'text', 'nroff' },
   callback = function()
     --local buf = vim.fn.expand("<abuf>")
     --local file = vim.fn.expand("<afile>")
@@ -46,6 +46,13 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { 'go.mod' },
   callback = function()
     vim.cmd.setfiletype('gomod')
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { '*.1' },
+  callback = function()
+    vim.cmd.setfiletype('nroff')
   end,
 })
 
