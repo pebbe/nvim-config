@@ -11,7 +11,7 @@ return {
     wk.register({
       a = { name = 'Status line' },
       b = { name = 'Buffers' },
-      c = { name = 'Code' },
+      -- c = { name = 'Code' },
       d = { mame = 'Diagnostics' },
       D = { name = 'Debug' },
       f = { name = 'Find', c = { name = 'Calls' } },
