@@ -22,6 +22,13 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { '*.xp', '*.xpath' },
+  callback = function()
+    vim.cmd.setfiletype('xquery')
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { '*.ttl' },
   callback = function()
     vim.cmd.setfiletype('turtle')
