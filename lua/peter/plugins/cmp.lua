@@ -4,6 +4,7 @@ return {
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
     'hrsh7th/cmp-calc', -- math calculation
+    'hrsh7th/cmp-emoji', -- emojis
     'hrsh7th/cmp-path', -- source for file system paths
     'L3MON4D3/LuaSnip', -- snippet engine
     'saadparwaiz1/cmp_luasnip', -- for autocompletion
@@ -46,7 +47,8 @@ return {
         { name = 'luasnip' }, -- snippets
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
-        { name = 'calc' }, -- math calculation:w
+        { name = 'calc' }, -- math calculation
+        { name = 'emoji' },
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
