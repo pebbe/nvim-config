@@ -40,7 +40,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- opt.iskeyword:append("-") -- consider string-string as whole word
 
--- checkhealth: geen waarschuwing voor perl_provider
+-- checkhealth: geen waarschuwing voor perl en ruby
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 vim.g.python3_host_prog = '/usr/bin/python3'
