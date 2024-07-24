@@ -5,8 +5,10 @@ let b:keymap_name = "nl"
 loadkeymap
 ij ĳ
 IJ Ĳ
-fl ƒ
+\\f ƒ
 \"e ë
 'e é
+\\e €
 ,, „
 '' ”
+\\c °C

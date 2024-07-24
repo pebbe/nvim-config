@@ -8,11 +8,12 @@ return {
   config = function()
     local wk = require('which-key')
     wk.setup({})
+    --[[
     wk.register({
       a = { name = 'Status line' },
       b = { name = 'Buffers' },
       -- c = { name = 'Code' },
-      d = { mame = 'Diagnostics' },
+      d = { name = 'Diagnostics' },
       D = { name = 'Debug' },
       f = { name = 'Find', c = { name = 'Calls' } },
       g = { name = 'Git' },
@@ -22,6 +23,22 @@ return {
       x = { name = 'Spelling' },
     }, {
       prefix = '<leader>',
+    })
+    --]]
+    wk.add({
+      { '<leader>D', group = 'Debug' },
+      { '<leader>O', group = 'Neorg' },
+      { '<leader>a', group = 'Status line' },
+      { '<leader>b', group = 'Buffers' },
+      { '<leader>c', group = 'Completion' },
+      { '<leader>cc', group = 'Local completion' },
+      { '<leader>cg', group = 'Global completion' },
+      { '<leader>d', desc = 'Diagnostics' },
+      { '<leader>f', group = 'Find' },
+      { '<leader>fc', group = 'Calls' },
+      { '<leader>g', group = 'Git' },
+      { '<leader>t', group = 'Tabs' },
+      { '<leader>x', group = 'Spelling' },
     })
   end,
 }
