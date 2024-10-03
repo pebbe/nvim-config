@@ -27,6 +27,7 @@ return {
         scss = { 'prettier' },
         sh = { 'beautysh' },
         svelte = { 'prettier' },
+        templ = { 'templ' },
         typescript = { 'prettier' },
         xml = { 'xmlformat' }, -- de default werkt beter
         yaml = { 'prettier' },
