@@ -10,7 +10,7 @@ return {
   'pyright', -- Python
   'rust_analyzer', -- Rust
   'svelte', -- Svelte
-  'tsserver', -- JavaScript, TypeScript
+  'ts_ls', -- JavaScript, TypeScript
   'vls', -- V
   'zls', -- Zig
 }
