@@ -23,6 +23,7 @@ return {
 
     cmp.setup({
       completion = {
+        autocomplete = false,
         completeopt = 'menu,menuone,preview,noselect',
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
