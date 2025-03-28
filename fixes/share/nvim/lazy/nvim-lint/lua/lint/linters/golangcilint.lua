@@ -9,15 +9,16 @@ return {
   cmd = 'golangci-lint',
   append_fname = false,
   args = (function()
-    if string.find(vim.fn.system { 'golangci-lint', 'version' }, 'version v2') then
+    local ok, value = pcall(vim.fn.system, { 'golangci-lint', 'version' })
+    if ok and (string.find(value, 'version v2') or string.find(value, 'version 2')) then
       return {
         'run',
         '--output.json.path=stdout',
         '--issues-exit-code=0',
         '--show-stats=false',
         function()
-          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
-        end
+          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
+        end,
       }
     else
       return {
@@ -29,8 +30,8 @@ return {
         '--print-issued-lines=false',
         '--print-linter-name=false',
         function()
-          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
-        end
+          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
+        end,
       }
     end
   end)(),
@@ -40,18 +41,18 @@ return {
       return {}
     end
     local decoded = vim.json.decode(output)
-    if decoded["Issues"] == nil or type(decoded["Issues"]) == 'userdata' then
+    if decoded['Issues'] == nil or type(decoded['Issues']) == 'userdata' then
       return {}
     end
 
     local diagnostics = {}
-    for _, item in ipairs(decoded["Issues"]) do
+    for _, item in ipairs(decoded['Issues']) do
       local curfile = vim.api.nvim_buf_get_name(bufnr)
-      local curfile_abs = vim.fn.fnamemodify(curfile, ":p")
+      local curfile_abs = vim.fn.fnamemodify(curfile, ':p')
       local curfile_norm = vim.fs.normalize(curfile_abs)
 
-      local lintedfile = cwd .. "/" .. item.Pos.Filename
-      local lintedfile_abs = vim.fn.fnamemodify(lintedfile, ":p")
+      local lintedfile = cwd .. '/' .. item.Pos.Filename
+      local lintedfile_abs = vim.fn.fnamemodify(lintedfile, ':p')
       local lintedfile_norm = vim.fs.normalize(lintedfile_abs)
 
       if curfile_norm == lintedfile_norm then
@@ -69,5 +70,5 @@ return {
       end
     end
     return diagnostics
-  end
+  end,
 }
