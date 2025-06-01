@@ -12,7 +12,7 @@ return {
       formatters_by_ft = {
         -- https://github.com/stevearc/conform.nvim#formatters
         bash = { 'beautysh' },
-        c = { 'clang-fomat' },
+        c = { 'clang-format' },
         cpp = { 'clang-format' },
         -- c = { 'uncrustify' },
         -- cpp = { 'uncrustify' },
