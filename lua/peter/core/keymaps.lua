@@ -25,6 +25,12 @@ k('n', '<leader>N', ':setlocal spell spelllang=nl<CR>', d('Nederlandse spelling'
 k('n', '<leader>E', ':setlocal spell spelllang=en<CR>', d('Engelse spelling'))
 k('n', '<leader>G', ':setlocal spell spelllang=de<CR>', d('Duitse spelling'))
 
+-- input
+k('n', '<leader>A', ':set keymap=dutch<CR>', d('Nederlandse invoer'))
+k('n', '<leader>M', ':set keymap=my<CR>', d('Mijn invoer'))
+k('n', '<leader>X', ':set keymap=xsampa<CR>', d('XSampa invoer'))
+k('n', '<leader>Z', ':set keymap=<CR>', d('gewone invoer'))
+
 -- movement
 k('n', 'j', 'gj', opts)
 k('n', 'k', 'gk', opts)
