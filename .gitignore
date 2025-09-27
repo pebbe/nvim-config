@@ -1,3 +1,6 @@
 *.tmp
 dirs
 spell
+lua/jsregexp.lua
+lua/jsregexp/
+
