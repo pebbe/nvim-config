@@ -36,11 +36,10 @@ return {
     -- configuratie van servers:
     --   :help lspconfig-all
     --   https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    local l = require('lspconfig')
     local capabilities = cmp_nvim_lsp.default_capabilities()
     for _, server in pairs(require('peter.plugins.lsp.servers')) do
       if server == 'lua_ls' then
-        l[server].setup({
+        vim.lsp.config(server, {
           capabilities = capabilities,
           on_attach = on_attach,
           settings = {
@@ -68,7 +67,7 @@ return {
           },
         })
       else
-        l[server].setup({
+        vim.lsp.config(server, {
           capabilities = capabilities,
           on_attach = on_attach,
         })
