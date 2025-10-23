@@ -18,7 +18,7 @@ return {
         -- cpp = { 'uncrustify' },
         css = { 'prettier' },
         dart = { 'dart_format' },
-        go = { 'gofumpt' },
+        go = { 'gofmt' },
         html = { 'prettier' }, -- de default werkt beter
         javascript = { 'prettier' },
         json = { 'prettier' },
