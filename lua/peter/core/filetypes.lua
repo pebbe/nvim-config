@@ -22,6 +22,20 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { '*.cyp' },
+  callback = function()
+    vim.cmd.setfiletype('cypher')
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { '*.gmi' },
+  callback = function()
+    vim.cmd.setfiletype('gemtext2')
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
   pattern = { '*.xp', '*.xpath' },
   callback = function()
     vim.cmd.setfiletype('xquery')
