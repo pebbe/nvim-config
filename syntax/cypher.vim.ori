@@ -13,9 +13,9 @@ elseif exists("b:current_syntax")
 endif
 
 syn case ignore
-syn match     cypherComment       "\s*--.*$"
+syn match     cypherComment       "\s*\/\/.*$"
 syn keyword   cypherKeyword       cypher start create match optional merge delete where return with unique union all set foreach
-syn keyword   cypherKeyword       limit order by desc descending asc ascending distinct
+syn keyword   cypherKeyword       node limit order by desc descending asc ascending distinct
 syn keyword   cypherKeyword       or and not xor is null in as on false true
 syn keyword   cypherKeyword       all any none single length type id nodes relationships rels labels
 syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce collect count timestamp
@@ -30,8 +30,6 @@ syn keyword   cypherKeyword       unwind index call yield detach exists remove s
 syn keyword   cypherKeyword       commit periodic load csv from starts ends
 syn keyword   cypherKeyword       key join scan
 
-syn keyword   cypherKeyword       select fieldterminator except intersect
-
 syn region    cypherProperty      start=+'+ skip=+\\\\\|\\'+ end=+'+
 syn region    cypherProperty      start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match     cypherRelationship  ":\w*_\w*"
@@ -41,8 +39,6 @@ syn match     cypherSymbol        "<-"
 syn match     cypherPropertyName  "\w\+:"
 syn match     cypherVariable      "\w\+"
 
-syn match     cypherMacro         "%[^%\n]\{-}%"
-
 hi link cypherComment              Comment
 hi link cypherKeyword              Define
 hi link cypherProperty             String
@@ -50,7 +46,5 @@ hi link cypherPropertyName         Identifier
 hi link cypherRelationship         Identifier
 hi link cypherSymbol               Operator
 hi link cypherVariable             Identifier
-
-hi link cypherMacro                Macro
 
 let b:current_syntax = "cypher"
