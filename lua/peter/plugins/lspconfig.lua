@@ -35,7 +35,7 @@ return {
 
     -- configuratie van servers:
     --   :help lspconfig-all
-    --   https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    --   https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
     local capabilities = cmp_nvim_lsp.default_capabilities()
     for _, server in pairs(require('peter.plugins.lsp.servers')) do
       if server == 'lua_ls' then
