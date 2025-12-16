@@ -26,6 +26,7 @@ return {
     })
     --]]
     wk.add({
+      { '<leader>C', group = 'Context' },
       { '<leader>D', group = 'Debug' },
       { '<leader>O', group = 'Neorg' },
       { '<leader>a', group = 'Status line' },

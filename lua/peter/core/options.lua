@@ -1,5 +1,6 @@
 local opt = vim.opt -- for conciseness
 
+-- TODO: waarom werkt dit niet meer?
 opt.listchars = 'tab:>-,trail:•,extends:»,precedes:«,nbsp:␣'
 
 -- backups

@@ -14,12 +14,38 @@ return {
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
+    local s = luasnip.snippet
+    local f = luasnip.function_node
     local lspkind = require('lspkind')
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     local vsc = require('luasnip.loaders.from_vscode')
     vsc.lazy_load()
     pcall(vsc.lazy_load, { paths = './snippets/' }) -- pcall voor plaatsen waar local.json niet aanwezig is
+
+    -- TODO: dit naar apart bestand
+    luasnip.add_snippets('all', {
+      s({
+        trig = 'datum',
+        desc = 'huidige datum',
+      }, {
+        f(function()
+          local output = vim.system({ 'date', '+%A %-d %B %Y' }, { text = true }):wait()
+          return output.stdout:gsub('\n', '')
+        end),
+      }),
+    })
+    luasnip.add_snippets('all', {
+      s({
+        trig = 'tijd',
+        desc = 'huidige tijd',
+      }, {
+        f(function()
+          local output = vim.system({ 'date', '+%-H:%M' }, { text = true }):wait()
+          return output.stdout:gsub('\n', '')
+        end),
+      }),
+    })
 
     cmp.setup({
       completion = {

@@ -20,6 +20,9 @@ k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
 k('n', '<leader>p', ':echo expand("%:p")<cr>', d('Toon volledig path naar huidig bestand'))
 k('n', '<leader>P', ':cd %:p:h<cr>', d('Chdir naar directory van huidig bestand'))
 
+k('n', '<leader>C1', ':TSContext enable<cr>', d('Context aan'))
+k('n', '<leader>C0', ':TSContext disable<cr>', d('Context uit'))
+
 -- spelling
 k('n', '<leader>N', ':setlocal spell spelllang=nl<CR>', d('Nederlandse spelling'))
 k('n', '<leader>E', ':setlocal spell spelllang=en<CR>', d('Engelse spelling'))
@@ -94,7 +97,14 @@ k('n', '<leader>h', ':vertical help ', d('Help'))
 
 k('n', '<F5>', ':ls!<CR>', d('List buffers'))
 
-k('n', '<F6>', ':set list<CR>', d('Show specials'))
+-- opt.listchars = 'tab:>-,trail:•,extends:»,precedes:«,nbsp:␣'
+k(
+  'n',
+  '<F6>',
+  ':set listchars=space:-,tab:>.,trail:•,extends:»,precedes:«,nbsp:␣,multispace:-------+<CR>:set list<CR>',
+  -- ':set listchars=<CR>:set list<CR>',
+  d('Show specials')
+)
 k('n', '<F7>', ':set nolist<CR>', d('Hide specials'))
 
 -- Visual --------------------------------------
