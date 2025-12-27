@@ -72,6 +72,8 @@ return {
           on_attach = on_attach,
         })
       end
+      vim.opt.winborder = 'rounded'
+      vim.opt.listchars = 'tab:>-,trail:•,extends:»,precedes:«,nbsp:␣'
     end
   end,
 }

@@ -31,7 +31,7 @@ return {
       }, {
         f(function()
           local output = vim.system({ 'date', '+%A %-d %B %Y' }, { text = true }):wait()
-          return output.stdout:gsub('\n', '')
+          return output.stdout:gsub('\n', '') -- tekst mag geen newline bevatten, meer dan 1 regel als lijst
         end),
       }),
     })

@@ -14,6 +14,7 @@ opt.tabstop = 8 -- hoeveel spaties een echte TAB inneemt
 opt.softtabstop = 4 -- wanneer je TAB toetst
 opt.shiftwidth = 4 -- automatisch inspringen
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.winborder = 'rounded' -- TODO: hoe krijg ik dit local voor elke buffer?
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching

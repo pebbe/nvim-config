@@ -20,8 +20,7 @@ k('n', '<leader>Q', ':%bdelete<cr>', d('Sluit alle buffers'))
 k('n', '<leader>p', ':echo expand("%:p")<cr>', d('Toon volledig path naar huidig bestand'))
 k('n', '<leader>P', ':cd %:p:h<cr>', d('Chdir naar directory van huidig bestand'))
 
-k('n', '<leader>C1', ':TSContext enable<cr>', d('Context aan'))
-k('n', '<leader>C0', ':TSContext disable<cr>', d('Context uit'))
+k('n', '<leader>C', ':TSContext toggle<cr>', d('Context aan/uit'))
 
 -- spelling
 k('n', '<leader>N', ':setlocal spell spelllang=nl<CR>', d('Nederlandse spelling'))
