@@ -1,0 +1,1 @@
+{"secondary_sources":[],"schema_version":"1.1","name":"vls","primary_source":{"id":"pkg:github/vlang/vls@latest","type":"registry+v1"},"links":{"bin":{"vls":"vls_linux_x64"},"share":{},"opt":{}},"metrics":{"completion_time":1743185593335,"start_time":1743185592037}}

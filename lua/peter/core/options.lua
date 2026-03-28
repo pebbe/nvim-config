@@ -3,30 +3,46 @@ local opt = vim.opt -- for conciseness
 -- TODO: waarom werkt dit niet meer?
 opt.listchars = 'tab:>-,trail:•,extends:»,precedes:«,nbsp:␣'
 
--- backups
-opt.backup = true
-
--- line numbers
---opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-
-opt.tabstop = 8 -- hoeveel spaties een echte TAB inneemt
-opt.softtabstop = 4 -- wanneer je TAB toetst
-opt.shiftwidth = 4 -- automatisch inspringen
-opt.autoindent = true -- copy indent from current line when starting new one
 opt.winborder = 'rounded' -- TODO: hoe krijg ik dit local voor elke buffer?
 
+-- basic settings
+opt.number = true --          line numbers
+opt.relativenumber = false -- relative line numbers
+opt.cursorline = true --      highlight the current cursor line
+opt.scrolloff = 10 --         keep 10 lines above/below cursor
+opt.sidescrolloff = 8 --      keep 8 columns left/right of cursor
+opt.helplang = 'nl'
+
+-- indentation
+opt.tabstop = 8 --            hoeveel spaties een echte TAB inneemt
+opt.softtabstop = 4 --        wanneer je TAB toetst
+opt.shiftwidth = 4 --         automatisch inspringen
+opt.expandtab = false
+opt.smartindent = true
+opt.autoindent = true --      copy indent from current line when starting new one
+opt.breakindent = true
+opt.breakindentopt = 'shift:4'
+opt.linebreak = true
+
 -- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.ignorecase = true --      ignore case when searching
+opt.smartcase = true --       if you include mixed case in your search, assumes you want case-sensitive
+opt.hlsearch = true
+opt.incsearch = true
+opt.gdefault = true
+opt.inccommand = 'split'
 
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
+-- visual
+opt.signcolumn = 'yes' --     show sign column so that text doesn't shift
+-- opt.colorcolumn = "72"
 
-opt.signcolumn = 'yes' -- 'number' -- show sign column so that text doesn't shift
+-- files
+opt.autochdir = false
+opt.backup = true
+-- opt.undofile = true
+opt.autoread = true
 
--- maakt het mogelijk de cursor te verplaatsen naar waar niks is
-opt.virtualedit = 'block'
+opt.virtualedit = 'block' -- maakt het mogelijk de cursor te verplaatsen naar waar niks is
 
 -- backspace
 opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line or insert mode start position

@@ -1,0 +1,21 @@
+[mason-lspconfig.nvim] Server "c3_lsp" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+[mason-lspconfig.nvim] Server "turtle_ls" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+
+Installation not possible: ...vim/lazy/nvim-treesitter/lua/nvim-treesitter/install.lua:87: Parser not available for language "c3"
+See https://github.com/nvim-treesitter/nvim-treesitter/#adding-parsers on how to add a new parser!
+
+
+[mason-lspconfig.nvim] Server "c3_lsp" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+[mason-lspconfig.nvim] Server "sparql-language-server" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+[mason-lspconfig.nvim] Server "turtle-language-server" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+
+[mason-lspconfig.nvim] Server "c3_lsp" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+[mason-lspconfig.nvim] Server "sparql-language-server" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+[mason-lspconfig.nvim] Server "turtle_ls" is not a valid entry in ensure_installed. Make sure to only provide lspconfig server names.
+
+
+c3_lsp
+turtle_ls
+
+local registry = require "mason-registry"; local ok, pkg = pcall(registry.get_package, "c3_lsp")
+print(ok)
