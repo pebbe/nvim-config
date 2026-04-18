@@ -9,6 +9,7 @@ return {
   'jsonls', -- JSON
   'lemminx', -- XML
   'lua_ls', -- Lua
+  -- 'pkl', -- Pkl
   'pyright', -- Python
   'rust_analyzer', -- Rust
   --  'sparql-language-server', -- sparql, rq (ontbreekt in mason en lspconfig)

@@ -66,6 +66,7 @@ return {
           'nasm',
           'norg',
           'odin',
+          'pkl',
           'prolog',
           'python',
           'r',

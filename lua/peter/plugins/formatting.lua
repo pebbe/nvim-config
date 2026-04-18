@@ -24,6 +24,7 @@ return {
         json = { 'prettier' },
         less = { 'prettier' },
         lua = { 'stylua' },
+        pkl = { 'pkl' },
         scss = { 'prettier' },
         sh = { 'beautysh' },
         svelte = { 'prettier' },

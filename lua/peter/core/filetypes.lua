@@ -1,3 +1,14 @@
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufFilePost' }, {
+  pattern = { '*.write' },
+  callback = function()
+    vim.cmd.setfiletype('write')
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+    vim.wo.breakindent = true
+    vim.bo.expandtab = true
+  end,
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'mail', 'markdown', 'text', 'nroff' },
   callback = function()
