@@ -1,0 +1,43 @@
+==============================================================================
+vim.deprecated:                                                           1 ⚠️
+
+ ~
+- ⚠️ WARNING vim.validate is deprecated. Feature will be removed in Nvim 1.0
+  - ADVICE:
+    - use vim.validate(name, value, validator, optional_or_msg) instead.
+    - stack traceback:
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/debounce.lua:8
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/debounce.lua:27
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/pickers.lua:425
+        /home/peter/nvim/nvim/config/nvim/lua/peter/local/cd.lua:78
+    - stack traceback:
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/utils.lua:45
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/actions/history.lua:75
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/actions/state.lua:48
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/pickers.lua:1451
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/actions/init.lua:338
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/actions/mt.lua:65
+        /home/peter/nvim/nvim/config/nvim/lua/peter/local/cd.lua:69
+        /home/peter/nvim/nvim/share/nvim/lazy/telescope.nvim/lua/telescope/mappings.lua:253
+
+==============================================================================
+vim.lsp:                                                                  4 ⚠️
+- ⚠️ WARNING Unknown filetype 'gowork'.
+- ⚠️ WARNING Unknown filetype 'gotmpl'.
+- ⚠️ WARNING Unknown filetype 'xsl'.
+- ⚠️ WARNING Unknown filetype 'vlang'.
+==============================================================================
+which-key:                                                                2 ⚠️
+checking for overlapping keymaps ~
+- ⚠️ WARNING In mode `n`, <gb> overlaps with <gbc>:
+  - <gb>: Comment toggle blockwise
+  - <gbc>: Comment toggle current block
+- ⚠️ WARNING In mode `n`, <gc> overlaps with <gco>, <gcA>, <gcc>, <gcO>:
+  - <gc>: Comment toggle linewise
+  - <gco>: Comment insert below
+  - <gcA>: Comment insert end of line
+  - <gcc>: Comment toggle current line
+  - <gcO>: Comment insert above
+- ✅ OK Overlapping keymaps are only reported for informational purposes.
+  This doesn't necessarily mean there is a problem with your config.
+==============================================================================

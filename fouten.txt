@@ -1,0 +1,23 @@
+Decoration provider "start" (ns=nvim.treesitter.highlighter):
+Lua: ...1/share/nvim/runtime/lua/vim/treesitter/languagetree.lua:215: .../neovim-0.12.1/share/nvim/runtime/lua/vim/treesitter.lua:196: attempt to call method 'range' (a nil value)
+stack traceback:
+        [C]: in function 'f'
+        ...1/share/nvim/runtime/lua/vim/treesitter/languagetree.lua:215: in function 'tcall'
+        ...1/share/nvim/runtime/lua/vim/treesitter/languagetree.lua:596: in function 'parse'
+        ....1/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:580: in function <....1/share/nvim/runtime/lua/vim/treesitter/highlighter.lua:557>
+
+
+Tijdelijke oplossing:
+
+    in plugins/treesitter.lua :
+
+        -- configure treesitter
+        treesitter.setup({
+          -- enable syntax highlighting
+          highlight = {
+            enable = true,
+            disable = { -- list of languages that will be disabled
+              'html', -- TODO: html is broken
+            },
+          },
+          ...

@@ -11,8 +11,8 @@ return {
     config = function()
       -- import nvim-treesitter plugin
       local treesitter = require('nvim-treesitter.configs')
-      local tscontext = require('treesitter-context')
 
+      local tscontext = require('treesitter-context')
       -- TODO: hoort dit hier, of in een apart bestand?
       tscontext.setup({
         enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -31,10 +31,13 @@ return {
       })
 
       -- configure treesitter
-      treesitter.setup({ -- enable syntax highlighting
+      treesitter.setup({
+        -- enable syntax highlighting
         highlight = {
           enable = true,
-          disable = { '' }, -- list of languages that will be disabled
+          disable = { -- list of languages that will be disabled
+            'html', -- TODO: html is broken
+          },
         },
         -- enable indentation
         indent = {
